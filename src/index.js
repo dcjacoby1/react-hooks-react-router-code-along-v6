@@ -1,6 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./pages/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes";
+
+const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Home />);
+root.render(<RouterProvider router={router} />);
+
+
+//without const router and const route, this would work... 
+//but only be a one pager with home:
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<Home />);
